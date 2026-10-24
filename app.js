@@ -338,7 +338,7 @@
     }
     box.appendChild(seg('如果可以攜伴，你會帶幾位家人或伴侶？', 'companions', D.companions, false));
     box.appendChild(seg('這趟旅行你最在意什麼？（最多選 3 個）', 'priorities', D.priorities, true, 3));
-    box.appendChild(seg('你覺得每人預算（機票以外）多少比較合適？', 'budget', D.budgets, false));
+    box.appendChild(seg('機票加自費活動，你可以接受大約多少？', 'budget', D.budgets, false));
     var ta = el('textarea', { id: 'note', maxlength: '500', placeholder: '任何想法都可以，例如想避開的事、想一起做的事' });
     ta.value = S.opinions.note; ta.disabled = !canEdit;
     ta.addEventListener('input', function () { S.opinions.note = ta.value; touch(); });
@@ -467,7 +467,7 @@
     }
     var bg = r.budget || {}, bk = D.budgets.filter(function (o) { return bg[o.id]; });
     if (bk.length) {
-      out.appendChild(el('h3', { style: 'margin-top:8px', text: '每人預算（機票以外）' }));
+      out.appendChild(el('h3', { style: 'margin-top:8px', text: '機票加自費活動可以接受多少' }));
       out.appendChild(el('div', { class: 'card bars' }, bk.map(function (o) { return bar(o.label, bg[o.id], v, 'var(--ink-2)', ' 人'); })));
     }
     if (r.companionsAnswered) {

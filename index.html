@@ -105,6 +105,11 @@ h2 small{flex-basis:100%; font-size:14px; font-weight:500; color:var(--ink-3)}
 .days{list-style:none; margin:8px 0 0; padding:0; display:flex; flex-direction:column; gap:8px}
 .days li{display:grid; grid-template-columns:64px minmax(0,1fr); gap:10px; font-size:15px}
 .days .d{font-family:var(--f-num); font-weight:700; color:var(--ink-3)}
+.cover{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px}
+.cover div{background:var(--surface); border-radius:16px; padding:14px 16px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--shadow); min-width:0}
+.cover b{font-size:15px}
+.cover div:first-child b{color:var(--ok)}
+.cover span{font-size:14px; color:var(--ink-2); line-height:1.6}
 .plan .heads-up{margin-top:10px; font-size:14px; color:var(--warn); background:var(--warn-soft); border-radius:var(--r-sm); padding:8px 12px}
 
 /* 登入 */
@@ -231,7 +236,7 @@ footer{font-size:13px; color:var(--ink-3); line-height:1.7}
 @media (max-width: 520px){
   .plan-facts dd{font-size:19px}
   .wall{grid-template-columns:minmax(0,1fr)}
-  .res-grid{grid-template-columns:minmax(0,1fr)}
+  .res-grid, .cover{grid-template-columns:minmax(0,1fr)}
   .jar-count{font-size:30px}
 }
 @media (prefers-reduced-motion: reduce){
@@ -262,7 +267,11 @@ footer{font-size:13px; color:var(--ink-3); line-height:1.7}
 <section aria-labelledby="plans-h">
   <h2 id="plans-h">三個方案</h2>
   <div class="plans" id="plans"></div>
-  <p class="small muted">三個方案都包含當地住宿、包車與門票，機票與餐費自理。行程與航班時刻以業者報價、航空公司開賣時為準。</p>
+  <div class="cover">
+    <div><b>公司補助</b><span>住宿、包車、行程門票，還有全團一起吃的餐（飯店早餐、溫泉旅館晚餐、歡迎與歡送晚餐、行程中的午餐）</span></div>
+    <div><b>自費</b><span>機票、自由活動時段的餐、自選加購（例如跳傘、熱氣球、直升機）、個人消費</span></div>
+  </div>
+  <p class="small muted">行程與航班時刻以業者報價、航空公司開賣時為準。</p>
 </section>
 
 <section aria-labelledby="vote-h" id="vote">
